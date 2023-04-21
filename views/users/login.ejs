@@ -1,0 +1,22 @@
+<%- include('../layouts/header.ejs') %>
+
+  <body class="container">
+
+    <% if(typeof message !=='undefined' ){ %>
+      <h3 style="color: red">
+        <%= message %>
+      </h3>
+      <% } %>
+
+        <h3>Login</h3>
+        <form class="form" action="/login" method="post">
+          <label>Email:</label>
+          <input type="email" name="email" id="email" placeholder="Enter Email" required /><br><br>
+          <label>Password:</label>
+          <input type="password" name="password" placeholder="Enter password" required /><br><br>
+          <a class="forget" href="/forget">Forgot Password?</a><br><br>
+          <button>Login</button><br><br>
+          <p>If new user <a href="/register">Register here.</a></p>
+        </form>
+        <% include('../layouts/footer.ejs') %>
+  </body>

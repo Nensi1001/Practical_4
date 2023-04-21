@@ -1,0 +1,21 @@
+<% include('../layouts/header.ejs') %>
+
+  <h3>Email Verification</h3>
+  <!-- <h1>Email Verified</h1> -->
+
+  <form class="form" action="/email-verified" method="post">
+    <input type="hidden" name="userId" value="<%= id %>">
+    <label>Password:</label>
+    <input type="password" name="password" placeholder="Enter password" required />
+    <br /><br />
+    <label> Confirm Password:</label>
+    <input type="password" name="cpassword" placeholder="Re-enter password" required />
+    <br /><br />
+    <input type="submit" value="Submit" style="background-color: blue; color:white; border:none; font-size:20px" />
+  </form>
+  <% if(typeof message !=='undefined' ){ %>
+    <p style="color: red">
+      <%= message %>
+    </p>
+    <% } %>
+      <% include('../layouts/footer.ejs') %>

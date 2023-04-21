@@ -1,0 +1,68 @@
+<%- include('../layouts/header.ejs') %>
+
+    <h3>Customer List</h3>
+
+    <button class="edit"><a href="/customer/addcustomer">Add Customer</a></button>
+    <br>
+    <form class="search" action="">
+        <input type="text" placeholder="Search User name,email" name="search">
+        <!-- <input type="submit" value="Search"> -->
+        <button class="edit">Search</button>
+
+    </form>
+
+    <table class="table" border="1" cellspacing="0">
+        <tr>
+            <th>User Name</th>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Date of Birth</th>
+            <th>Action</th>
+        </tr>
+        <% if(users && users.length> 0){
+            for(let i=0;i<users.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= users[i].name %>
+                    </td>
+                    <td>
+                        <%= users[i].cname %>
+                    </td>
+                    <td>
+                        <%= users[i].email%>
+                    </td>
+                    <td>
+                        <%= users[i].phone %>
+                    </td>
+                    <td>
+                        <%= users[i].dob %>
+                    </td>
+
+                    <td><a href="/customer/edit-customer?id=<%= users[i]._id%>" class="button primary edit"><i
+                                class="fa fa-pencil-square" aria-hidden="true"
+                                style="color: black; font-size: 30px;"></i></a>
+                        <a href="/customer/delete-customer?id=<%= users[i]._id%>"><i class="fa fa-trash"
+                                aria-hidden="true" style="color: red; font-size: 30px;"></i></a>
+                    </td>
+                </tr>
+                <% } } else{ %>
+                    <tr>
+                        <td colspan="6">Users Not found</td>
+                    </tr>
+                    <% } %>
+    </table>
+
+    <br>
+    <button class="left"><a href="?page=<%= previous %>"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></button>
+
+        <% for(let j=1;j<=totalPages;j++){ %>
+            <a class="pagenumber" href="?page=<%= j %>">
+                <%= j %>
+            </a>
+            <% } %>
+                <button class="right"><a href="?page=<%= next %>"><i class="fa fa-arrow-right" aria-hidden="true"></i></a></button>
+            
+    
+
+            <% include('../layouts/footer.ejs') %>

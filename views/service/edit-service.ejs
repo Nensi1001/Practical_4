@@ -1,0 +1,28 @@
+<%- include('../layouts/header.ejs') %>
+    <h1>Edit Service</h1>
+    <form action="" method="post"  width="50%">
+        <input type="hidden" name="id" id="uid" value="<%= service.id %>">
+        <label>Name:</label>
+        <input type="text" name="cname" placeholder="Enter Name" value="<%= service.customer_name %>" required />
+        <br><br>
+        <label>Vehicle Number:</label>
+        <input type="number" name="vehicle"  placeholder="Enter Vehicle Number" value="<%= service.vehicle_number %>" required />
+        <br><br>
+        <label>Pickup Date:</label>
+        <input type="date" name="pickup" value="<%= service.pickup_date %>" required />
+        <br><br>
+        <label>Drop Date:</label>
+        <input type="date" name="drop" value="<%= service.drop_date %>" required />
+        <br><br>
+        <label>Service Price:</label>
+        <input type="number" name="price" value="<%= service.service_price %>" required />
+        <br><br>
+        <label>Payable Amount:</label>
+        <input type="number" name="payamt" value="<%= service.payable_amount %>" required />
+        <br><br>
+        <input type="submit" value="Update Service" />
+    </form>
+
+
+
+    <% include('../layouts/footer.ejs') %>

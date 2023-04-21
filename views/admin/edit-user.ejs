@@ -1,0 +1,22 @@
+<%- include('../layouts/header.ejs') %>
+    <h1>Edit User</h1>
+<form action="/admin/edit-user" method="post" enctype="multipart/form-data" width="50%">
+    <input type="hidden" name="id" id="uid" value="<%= user.id %>">
+    <label>Name:</label>
+    <input type="text" name="name" placeholder="Enter Name" value="<%= user.name %>" required />
+    <br><br>
+    <label>Email:</label>
+    <input type="email" name="email" id="email" placeholder="Enter Email" value="<%= user.email %>" required />
+    <br><br>
+    
+    <label>Image:</label>
+    <input type="file" name="image" value="<%= user.image %>" />
+    <br><br>
+  
+    <input type="submit" value="Update User" />
+</form>
+<h4><a href="/admin/dashboard">Dashboard</a></h4>
+
+
+<% include('../layouts/footer.ejs') %>
+

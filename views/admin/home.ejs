@@ -1,0 +1,28 @@
+<%- include('../layouts/header.ejs') %>
+
+  <body class="container">
+    <button class="logout"><a href="/logout">Logout</a></button>
+    <h3>Welcome <%= admin.name %>!</h3>
+    <h3><a href="/admin/dashboard">Dashboard</a></h3>
+    
+    <br />
+    <table style="width: 40%; font-size: 20px">
+      <tr>
+        <td>Name:</td>
+        <td>
+          <%= admin.name %>
+        </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>
+          <%= admin.email %>
+        </td>
+      </tr>
+
+    </table>
+
+    <!-- <button><a href="/">Pay</a></button> -->
+
+    <% include('../layouts/footer.ejs') %>
+  </body>

@@ -1,0 +1,32 @@
+    <h1>Users List</h1>
+
+    <br><br>
+    <table width="50%" border="1" style="margin-left: 10px;text-align: center;">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Image</th>
+    
+        </tr>
+        <% if(users.length> 0){
+            for(let i=0;i<users.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= users[i].name %>
+                    </td>
+                    <td>
+                        <%= users[i].email%>
+                    </td>
+                    <td><img src="http://localhost:5000/Images/<%= users[i].image %>" alt="<%= users[i].image %>" width="100px"
+                            height="100px"></td>
+                   
+                </tr>
+                <% } } else{ %>
+                    <tr>
+                        <td colspan="3">Users Not found</td>
+                    </tr>
+                    <% } %>
+
+    </table>
+
+ 

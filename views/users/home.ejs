@@ -1,0 +1,29 @@
+<%- include('../layouts/header.ejs') %>
+
+
+  <body class="container">
+    <button class="logout">Logout</button>
+
+    <h3>Welcome <%= user.name %>!</h3>
+    <h3><a href="/dashboard">Dashboard</a></h3>
+
+    <table>
+      <tr>
+        <td>Name: </td>
+        <td>
+          <%= user.name %>
+        </td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td>
+          <%= user.email %>
+        </td>
+      </tr>
+     
+    </table>
+
+    <button class="edit"><a href="edit?id=<%= user._id %>">Edit</a></button><br>
+
+    <% include('../layouts/footer.ejs') %>
+  </body>

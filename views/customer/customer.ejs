@@ -1,0 +1,48 @@
+<%- include('../layouts/header.ejs') %>
+
+    <div class="container">
+        <h3>Add New Customer</h3>
+        <form class="form" action="" method="post" width="60%">
+            <div class="formdata">
+                <label>User Name:</label>
+                <select name="name">
+                    <% for(var i in dropdown) { %>
+                        <option>
+                            <%= dropdown[i].name %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <br><br>
+            <div class="formdata">
+                <label>Customer Name:</label>
+                <input type="text" name="cname" placeholder="Enter Name" required />
+            </div>
+            <br><br>
+            <div class="formdata">
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Enter Email" required />
+            </div>
+            <br><br>
+            <div class="formdata">
+                <label>Phone Number:</label>
+                <input type="number" name="phone" placeholder="Enter Phone No." required />
+            </div>
+            <br><br>
+            <div class="formdata">
+                <label>Date of Birth:</label>
+                <input type="date" name="dob" id="dob" required />
+            </div>
+            <br><br>
+
+            <button>Add Customer</button>
+        </form>
+    </div>
+    <h4><a href="/customer/custlist">Go Back</a></h4>
+    <% if(typeof message !=='undefined' ){ %>
+        <p style="color: rgb(255, 10, 10)">
+            <%= message %>
+        </p>
+        <% } %>
+
+            <% include('../layouts/footer.ejs') %>

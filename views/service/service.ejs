@@ -1,0 +1,52 @@
+<%- include('../layouts/header.ejs') %>
+<style>
+.container{
+    margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        /* padding-top: 10px; */
+        height: 500px;
+        width:400px;
+        background-color: bisque;
+    }
+</style>
+<div class="container">
+<h3>Add New Service</h3>
+
+<form action="" method="post"  width="50%">
+        <label>Customer Name:</label>
+        <select name="cname" >
+        <% for(var i in dropdown) { %>
+            <option>
+                <%= dropdown[i].cname %>
+            </option>
+            <% } %>
+    </select>
+        <br><br>
+        <label>Vehicle Number:</label>
+        <input type="number" name="vehicle" placeholder="Enter Vehicle Number" required />
+        <br><br>
+        <label>PickUp Date:</label>
+        <input type="date" name="pickup" required />
+        <br><br>
+        <label>Drop Date:</label>
+        <input type="date" name="drop" required />
+        <br><br>
+        <label>Service Price:</label>
+        <input type="number" name="price" required />
+        <br><br>
+        <label>Payable Amount:</label>
+        <input type="number" name="payamt" required />
+        <br><br>
+
+        <input type="submit" value="Add Service" />
+    </form>
+
+    <% if(typeof message !=='undefined' ){ %>
+        <p style="color: rgb(255, 10, 10)">
+            <%= message %>
+        </p>
+        <% } %>
+            <h4><a href="/service/servicelist">Go Back</a></h4>
+</div>
+            <% include('../layouts/footer.ejs') %>

@@ -1,0 +1,30 @@
+<%- include('../layouts/header.ejs') %>
+
+<body class="container">
+  <h3>Registration</h3>
+      <form class="form" id="form" action="/register" method="post" >
+          <label>Name:</label>
+          <input type="text" name="name" id="name" placeholder="Enter Name" required /><br><br>
+          <label>Email:</label>
+          <input type="email" name="email" id="email" placeholder="Enter Email" required /><br><br>
+          <label>Date of Birth:</label>
+          <input type="date" name="dob" id="dob"  required /><br><br>
+            <label>Phone:</label>
+            <input type="number" name="phone" id="phone" required /><br><br>
+       
+          <div class="form-group">
+            <label>City:</label>
+           <select name="city" id="city">
+            <option value="Ahemadabad">Ahemadabad</option>
+            <option value="Agra">Agra</option>
+            <option value="Surat">Surat</option>
+            <option value="Rajkot"></option>
+           </select>
+          </div><br><br>
+        <button>Register</button>
+      </form>
+  <% include('../layouts/footer.ejs') %>
+  <% if(typeof message !== 'undefined'){ %>
+  <p style="color: green"><%= message %></p>
+  <% } %> <% include('../layouts/footer.ejs') %>
+</body>

@@ -1,0 +1,29 @@
+<%- include('../layouts/header.ejs') %>
+
+<h3>Add New User</h3>
+
+<form class="form" action="" method="post" enctype="multipart/form-data" width="50%">
+  <label>Name:</label>
+  <input type="text" name="name" placeholder="Enter Name" required />
+  <br><br>
+  <label>Email:</label>
+  <input type="email" name="email" id="email" placeholder="Enter Email" required />
+  <br><br>
+  <label>Phone Number:</label>
+  <input type="number" name="phone" id="phone" placeholder="Enter Phone No." required />
+  <br><br>
+  <label>Date of Birth:</label>
+  <input type="date" name="dob" id="dob"  required />
+  <br><br>
+  <label>Image:</label>
+  <input type="file" name="image" required />
+  <br><br>
+  <button>Add User</button>
+</form>
+
+<% if(typeof message !== 'undefined'){ %>
+<p style="color: rgb(255, 10, 10)"><%= message %></p>
+<% } %>
+<h3><a href="/admin/dashboard">Go Back</a></h3>
+
+<% include('../layouts/footer.ejs') %>

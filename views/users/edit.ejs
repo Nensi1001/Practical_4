@@ -1,0 +1,13 @@
+<%- include('../layouts/header.ejs') %>
+
+<form class="form" action="" method="post" >
+    <!-- <input type="file" name="image"><br><br> -->
+    <input type="hidden" name="user_id" value="<%= user._id %>">
+    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name"><br><br>
+    <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email"><br><br>
+    <!-- <input type="submit" value="Update Profile"> -->
+    <button>Update Profile</button>
+    
+</form>
+
+<% include('../layouts/footer.ejs') %>

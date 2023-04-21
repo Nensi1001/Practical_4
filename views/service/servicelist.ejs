@@ -1,0 +1,66 @@
+
+<h2>Service List</h2>
+
+<button><a href="/service/addservice">Add Service</a></button>
+<br>
+<form action="">
+    <input type="text" placeholder="Search User name,email" name="search">
+    <input type="submit" value="Search">
+</form>
+
+<table width="50%" border="1" style="margin-left: 10px;text-align: center;">
+    <tr>
+        <th>Customer Name</th>
+        <th>Vehicle Number</th>
+        <th>Pickup date</th>
+        <th>Drop date</th>
+        <th>Service Price</th>
+        <th>Payable Amount</th>
+        <th>Action</th>
+        <th>Payment</th>
+    </tr>
+    <% if(services && services.length> 0){
+        for(let i=0;i<services.length;i++){ %>
+            <tr>
+                <td>
+                    <%= services[i].customer_name%>
+                </td>
+                <td>
+                    <%= services[i].vehicle_number%>
+                </td>
+                <td>
+                    <%= services[i].pickup_date %>
+                </td>
+                <td>
+                    <%= services[i].drop_date%>
+                </td>
+                <td>
+                    <%= services[i].service_price%>
+                </td>
+                <td>
+                    <%= services[i].payable_amount%>
+                    </td>
+                    <td><a href="/service/edit-service?id=<%= services[i]._id%>" class="button primary edit">Edit</a>
+                        <a href="/service/delete-service?id=<%= services[i]._id%>">Delete</a>
+                        </td>
+                        <td>
+                            <button><a href="/service/payment?id=<%= services[i]._id%>">Pay now</a></button>
+                    </td>
+                    </tr>
+                    <% } } else{ %>
+                        <tr>
+                            <td colspan="6">Users Not found</td>
+                            </tr>
+                            <% } %>
+                            </table>
+                            
+                            <br>
+    <button class="left"><a href="?page=<%= previous %>"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></button>
+    
+    <% for(let j=1;j<=totalPages;j++){ %>
+        <a class="pagenumber" href="?page=<%= j %>">
+            <%= j %>
+        </a>
+        <% } %>
+            <button class="right"><a href="?page=<%= next %>"><i class="fa fa-arrow-right"
+                        aria-hidden="true"></i></a></button>
